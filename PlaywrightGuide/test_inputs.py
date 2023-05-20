@@ -3,7 +3,6 @@ import pytest
 
 @pytest.mark.skip
 def test_facebook(page):
-
     page.goto("https://www.facebook.com/register")
 
     page.locator("text=Zezwól na korzystanie z niezbędnych i opcjonalnych plików cookie").click()
@@ -28,6 +27,7 @@ def test_facebook(page):
 
     page.locator("button[name=\"websubmit\"]").click()
 
+
 @pytest.mark.skip
 def test_checkbox(page):
     page.goto("https://www.w3.org/WAI/ARIA/apg/example-index/checkbox/checkbox")
@@ -48,6 +48,7 @@ def test_checkbox(page):
 
     page.locator("div[role=\"checkbox\"]:has-text(\"Tomato\")").click()
 
+
 @pytest.mark.skip
 def test_type(page):
     page.goto("https://www.google.com")
@@ -58,6 +59,7 @@ def test_type(page):
     page.locator("[aria-label=\"Szukaj\"]").type("social media")
     page.locator("[aria-label=\"Szukaj\"]").press("Enter")
 
+
 def test_upload(page):
     page.goto("https://www.filemail.com/share/upload-file")
     page.locator("text=Dodaj plik").click()
@@ -66,4 +68,3 @@ def test_upload(page):
         "/Users/metju29/PycharmProjects/python-playwright/PlaywrightGuide/test1.txt")
 
     page.locator("button:has-text(\"Wyślij\")").click()
-
